@@ -1,0 +1,93 @@
+{
+  "models": [
+    {
+      "name": "mobilenet_float",
+      "testName": "MobileNet_FLOAT",
+      "baselineSec": 0.060,
+      "inputSize": [1, 224, 224, 3],
+      "inputOutputs": [
+        {
+          "input": "mobilenet_float/cup.input",
+          "output": "mobilenet_float/cup.output",
+          "dataSize": 4
+        }
+      ]
+    },
+    {
+      "name": "mobilenet_quantized",
+      "testName": "MobileNet_QUANT8",
+      "baselineSec": 0.060,
+      "inputSize": [1, 224, 224, 3],
+      "inputOutputs": [
+        {
+          "input": "mobilenet_quantized/cup.input",
+          "output": "mobilenet_quantized/cup.output",
+          "dataSize": 1
+        }
+      ]
+    },
+    {
+      "name": "resnet_float",
+      "baselineSec": 0.760,
+      "inputSize": [1, 299, 299, 3],
+      "inputOutputs": [
+        {
+          "input": "resnet_float/cup.input",
+          "output": "resnet_float/cup.output",
+          "dataSize": 4
+        }
+      ]
+    },
+    {
+      "name": "resnet_quantized",
+      "baselineSec": 0.670,
+      "inputSize": [1, 299, 299, 3],
+      "inputOutputs": [
+        {
+          "input": "resnet_quantized/cup.input",
+          "output": "resnet_quantized/cup.output",
+          "dataSize": 1
+        }
+      ]
+    },
+    {
+      "name": "hdrnet_float",
+      "testName": "HDRNet_FLOAT",
+      "baselineSec": 0.011,
+      "inputSize": [1, 256, 256, 3],
+      "inputOutputs": [
+        {
+          "input": "hdrnet_float/cup.input",
+          "output": "hdrnet_float/cup.output",
+          "dataSize": 4
+        }
+      ]
+    },
+    {
+      "name": "hdrnet_quantized",
+      "testName": "HDRNet_QUANT8",
+      "baselineSec": 0.006,
+      "inputSize": [1, 256, 256, 3],
+      "inputOutputs": [
+        {
+          "input": "hdrnet_quantized/cup.input",
+          "output": "hdrnet_quantized/cup.output",
+          "dataSize": 1
+        }
+      ]
+    },
+    {
+      "name": "tts_float",
+      "testName": "TTS_FLOAT",
+      "baselineSec": 0.004,
+      "inputSize": [1, 1, 1, 334],
+      "inputOutputs": [
+        {
+          "input": "tts_float/tts.input",
+          "output": "tts_float/tts.output",
+          "dataSize": 4
+        }
+      ]
+    }
+  ]
+}
