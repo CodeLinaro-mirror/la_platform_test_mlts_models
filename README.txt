@@ -42,35 +42,16 @@ on Oct 5 2018.
 Golden output generated with ToT tflite (Linux, CPU).
 
 ------------------------------------------------------------------
-- hdrnet_float.tflite
-Partial tensorflow lite model based on
-"Deep Bilateral Learningfor Real-Time Image Enhancement"
-https://groups.csail.mit.edu/graphics/hdrnet/
+- mobilenet_v2_(0.35_128|0.5_160|0.75_192|1.0_224).tflite
+MobileNet v2 tensorflow lite model based on:
+"MobileNetV2: Inverted Residuals and Linear Bottlenecks"
+https://arxiv.org/abs/1801.04381
 Apache License, Version 2.0
 
-It's partial because Pack and Transpose operations were not supported at the time
-of model creation.
-
-------------------------------------------------------------------
-- hdrnet_quantized.tflite
-8bit quantized partial tensorflow lite model based on
-"Deep Bilateral Learning for Real-Time Image Enhancement"
-https://groups.csail.mit.edu/graphics/hdrnet/
-Apache License, Version 2.0
-
-------------------------------------------------------------------
-- resnet_float.tflite
-ResNet tensorflow lite model based on:
-"Deep Residual Learning for Image Recognition"
-https://arxiv.org/abs/1512.03385
-Apache License, Version 2.0
-
-------------------------------------------------------------------
-- resnet_quantized.tflite
-8bit quantized ResNet tensorflow lite model based on:
-"Deep Residual Learning for Image Recognition"
-https://arxiv.org/abs/1512.03385
-Apache License, Version 2.0
+Downloaded from
+https://storage.googleapis.com/mobilenet_v2/checkpoints/mobilenet_v2_${variant}.tgz
+on Oct 16 2018 and converted using ToT toco.
+Golden output generated with ToT tensorflow (Linux, CPU).
 
 ------------------------------------------------------------------
 - ssd_mobilenet_v1_coco_float.tflite
@@ -114,16 +95,6 @@ ASR tensorflow lite model based on the ASR acoustic model in:
 "Personalized Speech recognition on mobile devices"
 https://arxiv.org/abs/1603.03185
 Apache License, Version 2.0
-------------------------------------------------------------------
-- hotword_float.tflite
-TFLite test hotword model, see:
-https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/models/testdata/g3doc#hotword-model
-Apache License, Version 2.0
-------------------------------------------------------------------
-- endpointer_float.tflite
-TFLite test endpointer model, see:
-https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/models/testdata/g3doc#endpointer-model
-Apache License, Version 2.0
 
 ------------------------------------------------------------------
 Input files:
@@ -137,14 +108,10 @@ Photo of banana by pszczepaniak@google.com, Apache License, Version 2.0
 - tts_float/arctic_*.input
 Linguistic features and durations generated from text sentences from the CMU Arctic set
 (http://www.festvox.org/cmu_arctic/cmuarctic.data), Apache License, Version 2.0
-- asr_float.input
-Acoustic features of a test speech, Apache License, Version 2.0
-- hotword_float.input
-Acoustic features of a test speech, Apache License, Version 2.0
-- endpointer_float.input
-Acoustic features of a test speech, Apache License, Version 2.0
+- asr_float/*.input
+Acoustic features generated from audio files from the LibriSpeech dataset
+(http://www.openslr.org/12/), Creative Commons Attribution 4.0 International License
 ------------------------------------------------------------------
 
-TODO(pszczepaniak): Update hdrnet to full model with pack and transpose
 TODO(pszczepaniak): Provide at least 5 inputs outputs for each model
 
