@@ -203,7 +203,11 @@
       "inputOutputs": [
         {
           "input": "ssd_mobilenet_v1_coco_float/tarmac_float.input",
-          "output": "ssd_mobilenet_v1_coco_float/tarmac_float.output"
+          "outputs": [
+            "ssd_mobilenet_v1_coco_float/tarmac_float.output0",
+            "ssd_mobilenet_v1_coco_float/tarmac_float.output1",
+            "ssd_mobilenet_v1_coco_float/tarmac_float.output2"
+          ]
         }
       ]
     },
@@ -216,19 +220,33 @@
       "inputOutputs": [
         {
           "input": "ssd_mobilenet_v1_coco_quantized/tarmac.input",
-          "output": "ssd_mobilenet_v1_coco_quantized/tarmac.output"
+          "outputs": [
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output0",
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output1",
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output2",
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output3",
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output4",
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output5",
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output6",
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output7",
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output8",
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output9",
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output10",
+            "ssd_mobilenet_v1_coco_quantized/tarmac.output11"
+          ]
         }
       ]
     },
     {
       "name": "tts_float",
       "testName": "TTS_FLOAT",
+      "minSdkVersion": 29,
       "baselineSec": 0.004,
       "evaluator": {
           "className": "MelCepLogF0",
           "outputMeanStdDev": "tts_float/tts_float.output_mean_std_dev"
       },
-      "inputSize": [1, 1, 1, 334],
+      "inputSize": [1, 334],
       "dataSize": 4,
       "inputOutputs": [
         {
@@ -440,7 +458,7 @@
       "evaluator": {
           "className": "PhoneErrorRate"
       },
-      "inputSize": [1, 320, 1, 1],
+      "inputSize": [1, 320],
       "dataSize": 4,
       "inputOutputs": [
         {
